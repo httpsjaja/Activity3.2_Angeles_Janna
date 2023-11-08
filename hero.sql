@@ -161,3 +161,13 @@ WHERE hero_id = 1
 
 DELETE FROM heroitem
 WHERE hero_id = 1
+--5. "feat/select-active-players"
+SELECT hero_name, is_active, hero_name
+FROM player INNER JOIN hero
+ON player.hero_id = hero.hero_id
+WHERE is_active = 'true'
+--6. "feat/select-heroes-archers"
+SELECT class_name, hero_name
+FROM hero INNER JOIN class
+ON hero.class_id = class.class_id
+WHERE hero_name = 'Range Archers'
